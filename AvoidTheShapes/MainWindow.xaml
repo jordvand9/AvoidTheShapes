@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AvoidTheShapes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="661" Width="1045">
+        Title="AvoidTheShapes - Menu" Height="661" Width="1045">
     <Grid>
-        <Button x:Name="btnEasy" Content="Easy" HorizontalAlignment="Left" Margin="98,263,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="#FF4B4B4B" Foreground="White" FontSize="24"/>
-        <Button x:Name="btnMedium" Content="Medium" HorizontalAlignment="Left" Margin="413,263,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="#FF4B4B4B" Foreground="White" FontSize="24"/>
-        <Button x:Name="btnHard" Content="Hard" HorizontalAlignment="Left" Margin="737,263,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="#FF4B4B4B" Foreground="White" FontSize="24"/>
-        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="413,410,0,0" VerticalAlignment="Top" Width="200" Height="75" Foreground="White" FontSize="36">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnEasy" Content="Easy" HorizontalAlignment="Left" Margin="98,263,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="#FF4B4B4B" Foreground="White" FontSize="24" Click="btnEasy_Click"/>
+        <Button x:Name="btnMedium" Content="Medium" HorizontalAlignment="Left" Margin="413,263,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="#FF4B4B4B" Foreground="White" FontSize="24" Click="btnMedium_Click"/>
+        <Button x:Name="btnHard" Content="Hard" HorizontalAlignment="Left" Margin="737,263,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="#FF4B4B4B" Foreground="White" FontSize="24" Click="btnHard_Click"/>
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="413,410,0,0" VerticalAlignment="Top" Width="200" Height="75" Foreground="White" FontSize="36" Click="btnStart_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFB8154B" Offset="0"/>

@@ -20,6 +20,7 @@ namespace AvoidTheShapes
     /// </summary>
     public partial class MainWindow : Window
     {
+        int difficulty;
         public MainWindow()
         {
           
@@ -32,6 +33,26 @@ namespace AvoidTheShapes
             //Geef window een backgroundimage
             this.Background = new ImageBrush(new BitmapImage(new Uri(@"../../Resources/muur.png", UriKind.RelativeOrAbsolute)));
             
+        }
+
+        private void btnEasy_Click(object sender, RoutedEventArgs e)
+        {
+            difficulty = 1;
+        }
+
+        private void btnMedium_Click(object sender, RoutedEventArgs e)
+        {
+            difficulty = 2;
+        }
+
+        private void btnHard_Click(object sender, RoutedEventArgs e)
+        {
+            difficulty = 3;
+        }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
