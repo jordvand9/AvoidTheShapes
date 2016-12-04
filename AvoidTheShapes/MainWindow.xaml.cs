@@ -20,17 +20,17 @@ namespace AvoidTheShapes
     /// </summary>
     public partial class MainWindow : Window
     {
-        int difficulty;
+        public int difficulty;
         public MainWindow()
         {
           
             InitializeComponent();
-            //Geef window een fixed size en start in het midden van het scherm
+            //Give window a fixed size and make it start in the middle of the screen
             this.Height = 661;
             this.Width = 1045;
             this.ResizeMode = System.Windows.ResizeMode.NoResize;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
-            //Geef window een backgroundimage
+            //Assign a backgroundimage to the window
             this.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/Resources/muur.png", UriKind.RelativeOrAbsolute)));
         }
 
@@ -51,7 +51,10 @@ namespace AvoidTheShapes
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-
+            //Show second form
+            AvoidTheShapesGame GameWindow = new AvoidTheShapesGame(this);
+            GameWindow.Show();
+            this.Hide();
         }
     }
 }
