@@ -6,8 +6,5 @@
         xmlns:local="clr-namespace:AvoidTheShapes"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="129,181,0,0" VerticalAlignment="Top"/>
-
-    </Grid>
+    <Grid/>
 </Window>

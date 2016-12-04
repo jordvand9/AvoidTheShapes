@@ -25,10 +25,13 @@ namespace AvoidTheShapes
           
             InitializeComponent();
             //Geef window een fixed size en start in het midden van het scherm
-            this.Height = 720;
-            this.Width = 1280;
+            this.Height = 661;
+            this.Width = 1045;
             this.ResizeMode = System.Windows.ResizeMode.NoResize;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
+            //Geef window een backgroundimage
+            this.Background = new ImageBrush(new BitmapImage(new Uri(@"../../Resources/muur.png", UriKind.RelativeOrAbsolute)));
+            
         }
     }
 }
