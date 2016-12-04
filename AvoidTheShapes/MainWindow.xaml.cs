@@ -31,8 +31,7 @@ namespace AvoidTheShapes
             this.ResizeMode = System.Windows.ResizeMode.NoResize;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             //Geef window een backgroundimage
-            this.Background = new ImageBrush(new BitmapImage(new Uri(@"../../Resources/muur.png", UriKind.RelativeOrAbsolute)));
-            
+            this.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/Resources/muur.png", UriKind.RelativeOrAbsolute)));
         }
 
         private void btnEasy_Click(object sender, RoutedEventArgs e)
