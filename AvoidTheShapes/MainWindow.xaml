@@ -5,6 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AvoidTheShapes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid/>
+        Title="MainWindow" Height="661" Width="1045">
+    <Grid>
+        <Button x:Name="btnEasy" Content="Easy" HorizontalAlignment="Left" Margin="98,263,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="#FF4B4B4B" Foreground="White" FontSize="24"/>
+        <Button x:Name="btnMedium" Content="Medium" HorizontalAlignment="Left" Margin="413,263,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="#FF4B4B4B" Foreground="White" FontSize="24"/>
+        <Button x:Name="btnHard" Content="Hard" HorizontalAlignment="Left" Margin="737,263,0,0" VerticalAlignment="Top" Width="200" Height="50" Background="#FF4B4B4B" Foreground="White" FontSize="24"/>
+        <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Margin="413,410,0,0" VerticalAlignment="Top" Width="200" Height="75" Foreground="White" FontSize="36">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFB8154B" Offset="0"/>
+                    <GradientStop Color="#FF740E30" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
 </Window>
