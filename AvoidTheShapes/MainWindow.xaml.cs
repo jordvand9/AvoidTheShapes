@@ -22,7 +22,13 @@ namespace AvoidTheShapes
     {
         public MainWindow()
         {
+          
             InitializeComponent();
+            //Geef window een fixed size en start in het midden van het scherm
+            this.Height = 720;
+            this.Width = 1280;
+            this.ResizeMode = System.Windows.ResizeMode.NoResize;
+            WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
         }
     }
 }
