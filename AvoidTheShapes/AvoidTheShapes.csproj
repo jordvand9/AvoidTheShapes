@@ -55,6 +55,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Circle.cs" />
+    <Compile Include="Shapes.cs" />
     <Page Include="AvoidTheShapesGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

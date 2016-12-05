@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AvoidTheShapes"
         mc:Ignorable="d"
-        Title="AvoidTheShapesGame" Height="300" Width="300">
+        Title="AvoidTheShapesGame" Height="720" Width="1280">
     <Grid>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Canvas x:Name="GameCanvas" HorizontalAlignment="Left" Height="639" Margin="10,41,0,0" VerticalAlignment="Top" Width="1254"/>
 
     </Grid>
 </Window>

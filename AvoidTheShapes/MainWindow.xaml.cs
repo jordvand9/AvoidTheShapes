@@ -51,7 +51,7 @@ namespace AvoidTheShapes
 
         private void btnStart_Click(object sender, RoutedEventArgs e)
         {
-            //Show second form
+            //Show second form and hide the mainwindow
             AvoidTheShapesGame GameWindow = new AvoidTheShapesGame(this);
             GameWindow.Show();
             this.Hide();
