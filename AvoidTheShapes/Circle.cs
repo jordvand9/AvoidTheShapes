@@ -36,7 +36,7 @@ namespace AvoidTheShapes
         }
         public override void updatePhysicalShape()
         {
-            y += speed;
+            y += speed * (Convert.ToInt32(MainWindow.difficulty));
             ellipse.Margin = new Thickness(x, y, 0, 0);
             endCanvasReached();
         }

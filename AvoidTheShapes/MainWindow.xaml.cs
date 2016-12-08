@@ -20,7 +20,7 @@ namespace AvoidTheShapes
     /// </summary>
     public partial class MainWindow : Window
     {
-        public int difficulty;
+        public static double difficulty = 1;
         public MainWindow()
         {
           
@@ -41,12 +41,12 @@ namespace AvoidTheShapes
 
         private void btnMedium_Click(object sender, RoutedEventArgs e)
         {
-            difficulty = 2;
+            difficulty = 1.5;
         }
 
         private void btnHard_Click(object sender, RoutedEventArgs e)
         {
-            difficulty = 3;
+            difficulty = 2;
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)

@@ -27,10 +27,11 @@ namespace AvoidTheShapes
         
         private MainWindow otherWindow;
         private DispatcherTimer timer;
-        private Shapes figuur1, figuur2;
-        private int x, y, yy;
-        private int hoogte;
+        private Shapes figuur1, figuur2, figuur3, figuur4,figuur5;
+        Player test = new Player();
         
+        
+
         public AvoidTheShapesGame(MainWindow Menu)
         {
             InitializeComponent();
@@ -44,12 +45,14 @@ namespace AvoidTheShapes
             //Assign mainwindow 
             otherWindow = Menu;
             //Show difficulty chosen in the mainwindow.
-            label.Content = Menu.difficulty;
+            
             //Initializing timer
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(40);
             timer.Tick += Timer_Tick;
             maakShape();
+            
+                       
             
 
         }
@@ -63,9 +66,19 @@ namespace AvoidTheShapes
             figuur2 = new Square(200, 200, 50, 50,10);
             figuur2.CreatePhysicalShape(GameCanvas);
             
-            figuur1 = new Circle(100, y, 50,5);
+            figuur1 = new Circle(100, 100, 50,5);
             figuur1.CreatePhysicalShape(GameCanvas);
-            figuur1.updatePhysicalShape();
+
+            figuur3 = new Square(400, 200, 20, 60, 8);
+            figuur3.CreatePhysicalShape(GameCanvas);
+
+            figuur4 = new Circle(600, 100, 80, 12);
+            figuur4.CreatePhysicalShape(GameCanvas);
+
+            figuur5 = new Square(800, 100, 100, 40, 2);
+            figuur5.CreatePhysicalShape(GameCanvas);
+            test.CreatePhysicalShape(GameCanvas);
+
             //Start timer function
             startShapeTimer();
             
@@ -82,8 +95,14 @@ namespace AvoidTheShapes
             
             figuur1.updatePhysicalShape();
             figuur2.updatePhysicalShape();
+            figuur3.updatePhysicalShape();
+            figuur4.updatePhysicalShape();
+            figuur5.updatePhysicalShape();
             
-            label.Content = figuur1.Y;
+            
+
+            label.Content = figuur1.Y + " " + figuur2.Y + " " + figuur3.Y + " " + figuur4.Y + " "+ figuur5.Y + " Difficulty " + MainWindow.difficulty;
+            
            
             
         }
@@ -92,20 +111,9 @@ namespace AvoidTheShapes
         {
             otherWindow.Show();
         }
-        //private void endCanvasReached()
-        //{
-        //    //If end of canvas is reached stop the timer and make a new shape. 
-            
-        //    if (figuur1.Y  + (figuur1.Height * 2) >= 750)
-        //    {
-        //        y = 0;
-        //        maakShape();
-               
+        
 
 
-        //    }
-            
-        //}
 
 
 

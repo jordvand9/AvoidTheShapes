@@ -22,6 +22,7 @@ namespace AvoidTheShapes
             width = initialWidth;
             speed = initialSpeed;
             
+            
         }
         public override void CreatePhysicalShape(Canvas canCanvas)
         {
@@ -35,7 +36,7 @@ namespace AvoidTheShapes
 
         public override void updatePhysicalShape()
         {
-            y += speed;
+            y += speed * (Convert.ToInt32( MainWindow.difficulty));
             rect.Margin = new Thickness(x, y, 0, 0);
             endCanvasReached();
         }
