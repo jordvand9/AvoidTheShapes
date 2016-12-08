@@ -8,7 +8,7 @@
         Title="AvoidTheShapesGame" Height="720" Width="1280">
     <Grid>
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <Canvas x:Name="GameCanvas" HorizontalAlignment="Left" Height="639" Margin="10,41,0,0" VerticalAlignment="Top" Width="1254"/>
+        <Canvas x:Name="GameCanvas" HorizontalAlignment="Left" Height="639" Margin="10,41,0,0" VerticalAlignment="Top" Width="1254" Background="#FFB7B2B2"/>
 
     </Grid>
 </Window>
