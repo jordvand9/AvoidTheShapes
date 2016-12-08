@@ -16,12 +16,13 @@ namespace AvoidTheShapes
         //Variabelen
         public Ellipse ellipse;
         
-        public Circle (int initialX, int initialY,int initialHeight)
+        public Circle (int initialX, int initialY,int initialHeight, int initialSpeed)
         {
             x = initialX;
             y = initialY;
             height = initialHeight;
             width = initialHeight;
+            speed = initialSpeed;
         }
         public override void CreatePhysicalShape(Canvas canCanvas)
         {
@@ -35,7 +36,18 @@ namespace AvoidTheShapes
         }
         public override void updatePhysicalShape()
         {
+            y += speed;
             ellipse.Margin = new Thickness(x, y, 0, 0);
+            endCanvasReached();
+        }
+        public override void endCanvasReached()
+        {
+            if(Y + (Height*2) >= 750)
+            {
+                y = 0;
+                updatePhysicalShape();
+            }
+            
         }
     }
 }

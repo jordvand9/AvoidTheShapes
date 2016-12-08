@@ -49,6 +49,7 @@ namespace AvoidTheShapes
         //Methods
         public abstract void CreatePhysicalShape(Canvas CanCanvas);
         public abstract void updatePhysicalShape();
+        public abstract void endCanvasReached();
         
     }
 }

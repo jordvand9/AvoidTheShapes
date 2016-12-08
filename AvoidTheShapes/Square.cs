@@ -35,7 +35,20 @@ namespace AvoidTheShapes
 
         public override void updatePhysicalShape()
         {
+            y += speed;
             rect.Margin = new Thickness(x, y, 0, 0);
+            endCanvasReached();
+        }
+        public override void endCanvasReached()
+        {
+            if (Y + (Height ) >= 750)
+            {
+                y = 0;
+                updatePhysicalShape();
+
+
+
+            }
         }
     }
 }

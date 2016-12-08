@@ -60,10 +60,10 @@ namespace AvoidTheShapes
             timer.Stop();
             GameCanvas.Children.Clear();
             //Testshape
-            //figuur2 = new Square(200, 200, 50, 50,10);
-            //figuur2.CreatePhysicalShape(GameCanvas);
-            //hoogte = Convert.ToInt32(GameCanvas.ActualHeight);
-            figuur1 = new Circle(100, 100, 50);
+            figuur2 = new Square(200, 200, 50, 50,10);
+            figuur2.CreatePhysicalShape(GameCanvas);
+            
+            figuur1 = new Circle(100, y, 50,5);
             figuur1.CreatePhysicalShape(GameCanvas);
             figuur1.updatePhysicalShape();
             //Start timer function
@@ -79,11 +79,10 @@ namespace AvoidTheShapes
         private void Timer_Tick(object sender, EventArgs e)
         {
             //Move the shape 10 pixels and update this to the Y value.
-            y += 10;
-            //yy += 5;
-            figuur1.Y = y;
-            //figuur2.Y = yy;
-            endCanvasReached();
+            
+            figuur1.updatePhysicalShape();
+            figuur2.updatePhysicalShape();
+            
             label.Content = figuur1.Y;
            
             
@@ -93,21 +92,20 @@ namespace AvoidTheShapes
         {
             otherWindow.Show();
         }
-        private void endCanvasReached()
-        {
-            //If end of canvas is reached stop the timer and make a new shape. 
+        //private void endCanvasReached()
+        //{
+        //    //If end of canvas is reached stop the timer and make a new shape. 
             
-            if (figuur1.Y + (figuur1.Height * 2) >= 750)
-            {
-                y = 0;
-                maakShape();
-               //MessageBox.Show("Uit canvas");
-                
-                //zorg ervoor dat y terug 
+        //    if (figuur1.Y  + (figuur1.Height * 2) >= 750)
+        //    {
+        //        y = 0;
+        //        maakShape();
+               
 
 
-            }
-        }
+        //    }
+            
+        //}
 
 
 
