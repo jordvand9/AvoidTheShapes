@@ -24,10 +24,11 @@ namespace AvoidTheShapes
     /// </summary>
     public partial class AvoidTheShapesGame : Window
     {
+        
         private MainWindow otherWindow;
         private DispatcherTimer timer;
-        private Shapes figuur1;
-        private int x, y;
+        private Shapes figuur1, figuur2;
+        private int x, y, yy;
         
         public AvoidTheShapesGame(MainWindow Menu)
         {
@@ -47,26 +48,57 @@ namespace AvoidTheShapes
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(40);
             timer.Tick += Timer_Tick;
-            //Test
-            startBalloonTimer();
-            figuur1 = new Circle(100,100,50);
-            figuur1.CreatePhysicalShape(GameCanvas);
+            maakShape();
             
 
         }
-        private void startBalloonTimer()
+        private void maakShape()
         {
+            //Stop the timer
+            timer.Stop();
+            GameCanvas.Children.Clear();
+            //Testshape
+            figuur2 = new Square(200, 200, 50, 50,10);
+            figuur2.CreatePhysicalShape(GameCanvas);
+            
+            figuur1 = new Circle(100, 100, 50);
+            figuur1.CreatePhysicalShape(GameCanvas);
+            
+            //Start timer function
+            startShapeTimer();
+            
+        }
+        private void startShapeTimer()
+        {
+            //Start the timer
             timer.Start();
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
+            //Move the shape 10 pixels and update this to the Y value.
             y += 10;
+            yy += 5;
             figuur1.Y = y;
+            figuur2.Y = yy;
+            endCanvasReached();
+            
         }
         //Costum closing event handler.
         void AvoidTheShapesGame_Closing(object sender, CancelEventArgs e)
         {
             otherWindow.Show();
+        }
+        private void endCanvasReached()
+        {
+            //If end of canvas is reached stop the timer and make a new shape. 
+            
+            if ((figuur1.Y + (figuur1.Height * 2)) <= 0)
+            {
+                
+                maakShape();
+
+
+            }
         }
 
 

@@ -11,7 +11,7 @@ namespace AvoidTheShapes
     {
         //Private variabelen
         #region Variabelen
-        protected int x, y, height, width;
+        protected int x, y, height, width, speed;
         #endregion
         //Constructor
         //Properties
@@ -38,11 +38,17 @@ namespace AvoidTheShapes
             get { return width; }
             set { width = value; }
         }
+        public int Speed
+        {
+            get { return speed;  }
+            set { speed = value; }
+        }
         #endregion
 
 
         //Methods
         public abstract void CreatePhysicalShape(Canvas CanCanvas);
         public abstract void updatePhysicalShape();
+        
     }
 }

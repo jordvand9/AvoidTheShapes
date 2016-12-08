@@ -31,6 +31,7 @@ namespace AvoidTheShapes
             ellipse.Margin = new Thickness(x, y, 0, 0);
             ellipse.Fill = new SolidColorBrush(Colors.Blue);
             canCanvas.Children.Add(ellipse);
+            
         }
         public override void updatePhysicalShape()
         {
