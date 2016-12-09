@@ -15,7 +15,11 @@ namespace AvoidTheShapes
     {
         //Variabelen
         public Ellipse ellipse;
+        public Random rnd = new Random();
         
+
+
+
         public Circle (int initialX, int initialY,int initialHeight, int initialSpeed)
         {
             x = initialX;
@@ -23,6 +27,8 @@ namespace AvoidTheShapes
             height = initialHeight;
             width = initialHeight;
             speed = initialSpeed;
+            
+
         }
         public override void CreatePhysicalShape(Canvas canCanvas)
         {
@@ -39,6 +45,7 @@ namespace AvoidTheShapes
             y += speed * (Convert.ToInt32(MainWindow.difficulty));
             ellipse.Margin = new Thickness(x, y, 0, 0);
             endCanvasReached();
+            
         }
         public override void endCanvasReached()
         {
@@ -46,6 +53,11 @@ namespace AvoidTheShapes
             {
                 y = 0;
                 updatePhysicalShape();
+                int randomHoogte = rnd.Next(20, 100);
+                int randomBreedte = rnd.Next(20, 100);
+                
+                ellipse.Height = randomHoogte;
+                ellipse.Width = randomBreedte;
             }
             
         }

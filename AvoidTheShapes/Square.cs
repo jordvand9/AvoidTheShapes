@@ -14,6 +14,8 @@ namespace AvoidTheShapes
     {
         //Variabelen
         public Rectangle rect;
+        private Random rnd = new Random();
+        
         public Square(int initialX, int initialY,int initialWidth, int initialHeight, int initialSpeed)
         {
             x = initialX;
@@ -38,6 +40,7 @@ namespace AvoidTheShapes
         {
             y += speed * (Convert.ToInt32( MainWindow.difficulty));
             rect.Margin = new Thickness(x, y, 0, 0);
+            
             endCanvasReached();
         }
         public override void endCanvasReached()
@@ -46,7 +49,12 @@ namespace AvoidTheShapes
             {
                 y = 0;
                 updatePhysicalShape();
-
+                int randomHoogte = rnd.Next(20, 100);
+                int randomBreedte = rnd.Next(20, 100);
+                
+                rect.Height = randomHoogte;
+                rect.Width = randomBreedte;
+                
 
 
             }
