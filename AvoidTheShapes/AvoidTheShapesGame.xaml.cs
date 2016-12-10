@@ -80,7 +80,7 @@ namespace AvoidTheShapes
             figuur5 = new Square(800, 100, 100, 40, 2);
             figuur5.CreatePhysicalShape(GameCanvas);
 
-            test = new Player(580,600,20,50);
+            test = new Player(580,600,20,80);
             test.CreatePhysicalShape(GameCanvas);
 
 
@@ -116,7 +116,12 @@ namespace AvoidTheShapes
         {
             otherWindow.Show();
         }
-        
+        private void GameCanvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            test.Move((int)(e.GetPosition(this).X - 8));
+            label1.Content = e.GetPosition(this).X;
+        }
+
 
 
 

@@ -18,26 +18,27 @@ namespace AvoidTheShapes
         public int X
         {
             get { return x; }
-            set { x = value; }
+            set { x = value; UpdatePhysicalShape(); }
         }
         public int Y
         {
             get { return y; }
-            set { y = value; }
+            set { y = value;  }
         }
         public int Height
         {
             get { return height; }
-            set { height = value; }
+            set { height = value;  }
         }
         public int Width
         {
             get { return width; }
-            set { width = value; }
+            set { width = value;  }
         }
 
         #endregion
         //Methods
         public abstract void CreatePhysicalShape(Canvas CanCanvas);
+        protected abstract void UpdatePhysicalShape();
     }
 }

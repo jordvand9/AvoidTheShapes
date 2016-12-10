@@ -35,7 +35,17 @@ namespace AvoidTheShapes
             play.Fill = new SolidColorBrush(Colors.Red);
             canCanvas.Children.Add(play);
         }
-        
+        public void Move(int x)
+        {
+            X = x;
+        }
+        protected override void UpdatePhysicalShape()
+        {
+            play.Margin = new System.Windows.Thickness(X, Y, 0, 0);
+            play.Width = Width;
+            play.Height = Height;
+        }
+
 
 
 
