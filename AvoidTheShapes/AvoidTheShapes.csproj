@@ -59,6 +59,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Shapes.cs" />
     <Compile Include="Square.cs" />
+    <Compile Include="User.cs" />
     <Page Include="AvoidTheShapesGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -28,7 +28,8 @@ namespace AvoidTheShapes
         private MainWindow otherWindow;
         private DispatcherTimer timer;
         private Shapes figuur1, figuur2, figuur3, figuur4,figuur5;
-        Player test = new Player();
+        private Player test;
+        
         
         
         
@@ -78,7 +79,10 @@ namespace AvoidTheShapes
 
             figuur5 = new Square(800, 100, 100, 40, 2);
             figuur5.CreatePhysicalShape(GameCanvas);
+
+            test = new Player(580,600,20,50);
             test.CreatePhysicalShape(GameCanvas);
+
 
             //Start timer function
             startShapeTimer();

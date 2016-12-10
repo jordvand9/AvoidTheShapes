@@ -12,16 +12,21 @@ using System.Windows.Shapes;
 namespace AvoidTheShapes
 {
     
-    public class Player
+    public class Player : User
     {
-        //vars
+        //Variabelen
         public Rectangle play;
-        private int x=580, y=615;
-        private int p;
 
-        //
+        //Constructor
+        public Player(int initialX, int initialY, int initialHeight, int initialWidth)
+        {
+            x = initialX;
+            y = initialY;
+            height = initialHeight;
+            width = initialWidth;
+        }
         
-        public void CreatePhysicalShape(Canvas canCanvas)
+        public override void CreatePhysicalShape(Canvas canCanvas)
         {
             play = new Rectangle();
             play.Height = 20;
