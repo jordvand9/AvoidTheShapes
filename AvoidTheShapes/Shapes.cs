@@ -12,6 +12,7 @@ namespace AvoidTheShapes
         //Private variabelen
         #region Variabelen
         protected int x, y, height, width, speed;
+        Random rnd = new Random();
         #endregion
         //Constructor
         //Properties
@@ -59,26 +60,22 @@ namespace AvoidTheShapes
                 ((X > user.X) || ((X + Width) > user.X)) && //hier aangepast
                                                             //(Y < (user.Y + user.Height)) &&
                 ((X < (user.X + user.Width)) || ((X + Width) < (user.X + user.Width))))
-
             {
                 //Remove(rect);
                 user.Dead = true;
-
+                X = rnd.Next(0, 1000);
                 Y = 0;
-
-
+                
+                
                 if (this.GetType() == typeof(Circle))
                 {
                     AvoidTheShapesGame.points += 1;
                 }
-                else
+                else if (this.GetType() == typeof(Square))
                 {
                     AvoidTheShapesGame.points -= 2;
                     MainWindow.lives -= 1;
                 }
-
-
-
             }
         }
 

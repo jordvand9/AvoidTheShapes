@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 //Using for timer
 using System.Windows.Threading;
+using System.IO;
 
 namespace AvoidTheShapes
 {
@@ -30,6 +31,7 @@ namespace AvoidTheShapes
         private Shapes figuur1, figuur2, figuur3, figuur4, figuur5;
         private Player test;
         public static double points = 0;
+        public string highscore;
 
 
 
@@ -40,7 +42,7 @@ namespace AvoidTheShapes
         {
             InitializeComponent();
             //Give window a fixed size and make it start in the middle of the screen
-            this.Height = 720;
+            this.Height = 800;
             this.Width = 1280;
             this.ResizeMode = System.Windows.ResizeMode.NoResize;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
@@ -55,6 +57,17 @@ namespace AvoidTheShapes
             timer.Interval = TimeSpan.FromMilliseconds(40);
             timer.Tick += Timer_Tick;
             maakShape();
+            //Read current highscore
+            string sourcepath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string myfile = System.IO.Path.Combine(sourcepath, "myfile.txt");
+            StreamReader inputStream = File.OpenText(myfile);
+            highscore = inputStream.ReadLine();
+            while (highscore != null)
+            {
+                lblPreviousHighscore.Content = highscore;
+                highscore = inputStream.ReadLine();
+            }
+            inputStream.Close();
 
 
 
@@ -113,20 +126,31 @@ namespace AvoidTheShapes
             figuur5.CheckHit(test);
 
             label.Content = figuur1.Y + " " + figuur2.Y + " " + figuur3.Y + " " + figuur4.Y + " " + figuur5.Y + " Difficulty " + MainWindow.difficulty;
-            lblPoints.Content = points;
+            lblPoints.Content = points ;
+            lblLives.Content = MainWindow.lives;
 
             if (MainWindow.lives <= 0)
             {
                 //MessageBox.Show("Game over!!!");
                 this.Close();
-                MainWindow.lives = 3;
+                
             }
 
         }
         //Costum closing event handler.
         void AvoidTheShapesGame_Closing(object sender, CancelEventArgs e)
         {
+            
+            if ( points > Convert.ToInt32(highscore))
+            {
+                string destination = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                string newFile = System.IO.Path.Combine(destination, "myfile.txt");
+                StreamWriter outputStream = File.CreateText(newFile);
+                outputStream.WriteLine(points);
+                outputStream.Close();
+            }
             otherWindow.Show();
+
         }
         private void GameCanvas_MouseMove(object sender, MouseEventArgs e)
         {

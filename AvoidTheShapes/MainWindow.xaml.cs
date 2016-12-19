@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,7 @@ namespace AvoidTheShapes
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             //Assign a backgroundimage to the window
             this.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/Resources/muur.png", UriKind.RelativeOrAbsolute)));
+            
         }
 
         private void btnEasy_Click(object sender, RoutedEventArgs e)
@@ -59,6 +61,8 @@ namespace AvoidTheShapes
             AvoidTheShapesGame GameWindow = new AvoidTheShapesGame(this);
             GameWindow.Show();
             this.Hide();
+            AvoidTheShapesGame.points = 0;
+            lives = 3;
         }
     }
 }

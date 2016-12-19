@@ -43,26 +43,14 @@ namespace AvoidTheShapes
 
             endCanvasReached();
         }
-        //public override void CheckHit(Player user)
-        //{
-        //    if (((Y + Height) > (user.Y)) &&
-        //        ((X > user.X) || ((X + Width) > user.X)) && //hier aangepast
-        //        //(Y < (user.Y + user.Height)) &&
-        //        ((X < (user.X + user.Width)) || ((X + Width) < (user.X + user.Width))))
-
-        //    {
-        //        MessageBox.Show("Hit!");
-        //        //Remove(rect);
-        //        user.Dead = true;
-
-
-        //    }
-        //}
+        
         public override void endCanvasReached()
         {
             if (Y + (Height) >= 750)
             {
+                
                 y = 0;
+                x = rnd.Next(0, 1000);
                 updatePhysicalShape();
                 int randomHoogte = rnd.Next(20, 95);
                 int randomBreedte = rnd.Next(20, 95);
@@ -71,14 +59,11 @@ namespace AvoidTheShapes
                 rect.Width = randomBreedte;
                 Height = randomHoogte;
                 Width = randomBreedte;
-                AvoidTheShapesGame.points += 1;
+                
 
 
             }
         }
-        public void Remove(Rectangle rect)
-        {
-            //Remove(rect);
-        }
+        
     }
 }

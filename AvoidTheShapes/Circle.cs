@@ -63,11 +63,12 @@ namespace AvoidTheShapes
         {
             if (Y + (Height * 2) >= 750)
             {
+                x = rnd.Next(0, 1000);
                 y = 0;
                 updatePhysicalShape();
                 int randomHoogte = rnd.Next(20, 95);
                 int randomBreedte = rnd.Next(20, 95);
-
+                
                 ellipse.Height = randomHoogte;
                 ellipse.Width = randomHoogte;
                 Height = randomHoogte;

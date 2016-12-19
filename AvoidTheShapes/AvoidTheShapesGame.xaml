@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AvoidTheShapes"
         mc:Ignorable="d"
-        Title="AvoidTheShapesGame" Height="720" Width="1280">
+        Title="AvoidTheShapesGame" Height="965.6" Width="1280">
     <Grid>
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Canvas x:Name="GameCanvas" HorizontalAlignment="Left" Height="639" Margin="10,41,0,0" VerticalAlignment="Top" Width="1254" Background="#FFB7B2B2" MouseMove="GameCanvas_MouseMove"/>
         <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="774,15,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="975,20,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblPoints" Content="Label" HorizontalAlignment="Left" Margin="463,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.49,0.016"/>
+        <Label x:Name="lblLives" Content="Label" HorizontalAlignment="Left" Margin="1146,61,0,0" VerticalAlignment="Top" FontSize="36" FontFamily="Segoe UI Black" FontWeight="Bold" Foreground="#FFDF1C1C"/>
+        <Label x:Name="lblPoints" Content="Label" HorizontalAlignment="Left" Margin="1146,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.49,0.016" FontSize="36" FontWeight="Bold" Foreground="#FF15C32A"/>
+        <Label x:Name="lblPreviousHighscore" Content="Label" HorizontalAlignment="Left" Margin="1150,177,0,0" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Foreground="#FFDDD018"/>
 
     </Grid>
 </Window>
