@@ -56,27 +56,31 @@ namespace AvoidTheShapes
         //public abstract void CheckHit(Player user);
         public virtual void CheckHit(Player user)
         {
-            if (((Y + Height) > (user.Y)) &&
-                ((X > user.X) || ((X + Width) > user.X)) && //hier aangepast
-                                                            //(Y < (user.Y + user.Height)) &&
-                ((X < (user.X + user.Width)) || ((X + Width) < (user.X + user.Width))))
+            if (Y + (Height*2) < 750)
             {
-                //Remove(rect);
-                user.Dead = true;
-                X = rnd.Next(0, 1000);
-                Y = 0;
-                
-                
-                if (this.GetType() == typeof(Circle))
+                if (((Y + Height) > (user.Y)) &&
+                                ((X > user.X) || ((X + Width) > user.X)) && //hier aangepast
+                                                                            //(Y < (user.Y + user.Height)) &&
+                                ((X < (user.X + user.Width)) || ((X + Width) < (user.X + user.Width))))
                 {
-                    AvoidTheShapesGame.points += 1;
-                }
-                else if (this.GetType() == typeof(Square))
-                {
-                    AvoidTheShapesGame.points -= 2;
-                    MainWindow.lives -= 1;
+                    //Remove(rect);
+                    user.Dead = true;
+                    X = rnd.Next(0, 1000);
+                    Y = 0;
+
+
+                    if (this.GetType() == typeof(Circle))
+                    {
+                        AvoidTheShapesGame.points += 1;
+                    }
+                    else if (this.GetType() == typeof(Square))
+                    {
+                        AvoidTheShapesGame.points -= 2;
+                        MainWindow.lives -= 1;
+                    }
                 }
             }
+            
         }
 
     }

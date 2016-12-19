@@ -42,7 +42,7 @@ namespace AvoidTheShapes
         {
             InitializeComponent();
             //Give window a fixed size and make it start in the middle of the screen
-            this.Height = 800;
+            this.Height = 720;
             this.Width = 1280;
             this.ResizeMode = System.Windows.ResizeMode.NoResize;
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;

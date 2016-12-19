@@ -34,7 +34,12 @@ namespace AvoidTheShapes
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;
             //Assign a backgroundimage to the window
             this.Background = new ImageBrush(new BitmapImage(new Uri(@"pack://application:,,,/Resources/muur.png", UriKind.RelativeOrAbsolute)));
-            
+            //
+            string destination = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string newFile = System.IO.Path.Combine(destination, "myfile.txt");
+            StreamWriter outputStream = File.CreateText(newFile);
+
+            outputStream.Close();
         }
 
         private void btnEasy_Click(object sender, RoutedEventArgs e)
