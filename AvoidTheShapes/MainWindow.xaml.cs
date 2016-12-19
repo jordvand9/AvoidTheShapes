@@ -21,9 +21,10 @@ namespace AvoidTheShapes
     public partial class MainWindow : Window
     {
         public static double difficulty = 1;
+        public static double lives = 3;
         public MainWindow()
         {
-          
+
             InitializeComponent();
             //Give window a fixed size and make it start in the middle of the screen
             this.Height = 661;
@@ -37,16 +38,19 @@ namespace AvoidTheShapes
         private void btnEasy_Click(object sender, RoutedEventArgs e)
         {
             difficulty = 1;
+            lives = 3;
         }
 
         private void btnMedium_Click(object sender, RoutedEventArgs e)
         {
             difficulty = 1.5;
+            lives = 2;
         }
 
         private void btnHard_Click(object sender, RoutedEventArgs e)
         {
             difficulty = 2;
+            lives = 1;
         }
 
         private void btnStart_Click(object sender, RoutedEventArgs e)

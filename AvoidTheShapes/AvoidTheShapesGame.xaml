@@ -10,6 +10,8 @@
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Canvas x:Name="GameCanvas" HorizontalAlignment="Left" Height="639" Margin="10,41,0,0" VerticalAlignment="Top" Width="1254" Background="#FFB7B2B2" MouseMove="GameCanvas_MouseMove"/>
         <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="774,15,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Label" HorizontalAlignment="Left" Margin="975,20,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPoints" Content="Label" HorizontalAlignment="Left" Margin="463,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.49,0.016"/>
 
     </Grid>
 </Window>

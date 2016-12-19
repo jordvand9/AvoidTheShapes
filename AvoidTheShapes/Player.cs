@@ -11,7 +11,7 @@ using System.Windows.Shapes;
 
 namespace AvoidTheShapes
 {
-    
+
     public class Player : User
     {
         //Variabelen
@@ -24,8 +24,10 @@ namespace AvoidTheShapes
             y = initialY;
             height = initialHeight;
             width = initialWidth;
+            Dead = false;
         }
-        
+        public bool Dead { get; set; }
+
         public override void CreatePhysicalShape(Canvas canCanvas)
         {
             play = new Rectangle();
